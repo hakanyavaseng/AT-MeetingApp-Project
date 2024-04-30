@@ -35,6 +35,9 @@ namespace MeetingApp.Data.Extensions
             //Repositories
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
+            //RepositoryManager
+            services.AddScoped<IRepositoryManager, RepositoryManager>();
+            
         }
     }
 }

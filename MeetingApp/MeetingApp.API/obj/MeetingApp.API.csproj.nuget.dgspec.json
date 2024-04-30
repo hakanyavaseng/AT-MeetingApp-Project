@@ -336,7 +336,14 @@
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\hakan\\OneDrive\\Belgeler\\Github Repositories\\at-meeting-project\\MeetingApp\\MeetingApp.Data\\MeetingApp.Data.csproj": {
+                "projectPath": "C:\\Users\\hakan\\OneDrive\\Belgeler\\Github Repositories\\at-meeting-project\\MeetingApp\\MeetingApp.Data\\MeetingApp.Data.csproj"
+              },
+              "C:\\Users\\hakan\\OneDrive\\Belgeler\\Github Repositories\\at-meeting-project\\MeetingApp\\MeetingApp.Entities\\MeetingApp.Entity.csproj": {
+                "projectPath": "C:\\Users\\hakan\\OneDrive\\Belgeler\\Github Repositories\\at-meeting-project\\MeetingApp\\MeetingApp.Entities\\MeetingApp.Entity.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

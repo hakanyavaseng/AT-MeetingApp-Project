@@ -1305,6 +1305,10 @@
       "MeetingApp.Service/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "MeetingApp.Data": "1.0.0",
+          "MeetingApp.Entity": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/MeetingApp.Service.dll": {}
         },
