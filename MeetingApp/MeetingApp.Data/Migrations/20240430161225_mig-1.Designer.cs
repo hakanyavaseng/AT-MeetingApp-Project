@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MeetingApp.Data.Migrations
 {
     [DbContext(typeof(MeetingAppDbContext))]
-    [Migration("20240430135558_mig-2")]
-    partial class mig2
+    [Migration("20240430161225_mig-1")]
+    partial class mig1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -183,17 +183,17 @@ namespace MeetingApp.Data.Migrations
                         {
                             Id = new Guid("3279961c-856e-45b4-94f4-affdfdc1507d"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "89c8815f-da67-43c6-bbc5-3a34eee9bdaf",
+                            ConcurrencyStamp = "16e2e7f5-625f-4f63-8671-b5256051ff26",
                             Email = "hakanyavaseng@gmail.com",
                             EmailConfirmed = true,
                             FirstName = "Hakan",
                             ImageId = new Guid("37e97a2f-7af7-45e6-aeb9-8a409f062cba"),
                             LastName = "Yavaş",
                             LockoutEnabled = false,
-                            PasswordHash = "AQAAAAIAAYagAAAAEI5+rWQ6S7i16rISDWdJdZHwHTJ1UZgc0i5kR3tQ2TERGsht3E7G+QMs4+X0lAS3ow==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEEpoQRFQzG/FzWKo/jJ4Z58YJrAoS4Tasnf67ha95594q05UzYePRSegrrDS+CdOKg==",
                             PhoneNumber = "+905430000000",
                             PhoneNumberConfirmed = true,
-                            SecurityStamp = "2a6cb3ba-0680-4bad-8df3-002405497fdf",
+                            SecurityStamp = "2d1265d0-ffd1-4290-b032-e55afebafce3",
                             TwoFactorEnabled = false
                         });
                 });
@@ -235,7 +235,7 @@ namespace MeetingApp.Data.Migrations
                             FileName = "defaultfile",
                             FileType = ".jpg",
                             IsActive = true,
-                            RegisteredDate = new DateTime(2024, 4, 30, 16, 55, 58, 651, DateTimeKind.Local).AddTicks(5477)
+                            RegisteredDate = new DateTime(2024, 4, 30, 19, 12, 25, 13, DateTimeKind.Local).AddTicks(3494)
                         });
                 });
 
@@ -391,7 +391,7 @@ namespace MeetingApp.Data.Migrations
             modelBuilder.Entity("MeetingApp.Entity.Entities.Document", b =>
                 {
                     b.HasOne("MeetingApp.Entity.Entities.Meeting", "Meeting")
-                        .WithMany("Document")
+                        .WithMany("Documents")
                         .HasForeignKey("MeetingId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -468,7 +468,7 @@ namespace MeetingApp.Data.Migrations
 
             modelBuilder.Entity("MeetingApp.Entity.Entities.Meeting", b =>
                 {
-                    b.Navigation("Document");
+                    b.Navigation("Documents");
                 });
 #pragma warning restore 612, 618
         }

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace MeetingApp.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class mig2 : Migration
+    public partial class mig1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -248,12 +248,12 @@ namespace MeetingApp.Data.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "ImageId", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { new Guid("3279961c-856e-45b4-94f4-affdfdc1507d"), 0, "89c8815f-da67-43c6-bbc5-3a34eee9bdaf", "hakanyavaseng@gmail.com", true, "Hakan", new Guid("37e97a2f-7af7-45e6-aeb9-8a409f062cba"), "Yavaş", false, null, null, null, "AQAAAAIAAYagAAAAEI5+rWQ6S7i16rISDWdJdZHwHTJ1UZgc0i5kR3tQ2TERGsht3E7G+QMs4+X0lAS3ow==", "+905430000000", true, "2a6cb3ba-0680-4bad-8df3-002405497fdf", false, null });
+                values: new object[] { new Guid("3279961c-856e-45b4-94f4-affdfdc1507d"), 0, "16e2e7f5-625f-4f63-8671-b5256051ff26", "hakanyavaseng@gmail.com", true, "Hakan", new Guid("37e97a2f-7af7-45e6-aeb9-8a409f062cba"), "Yavaş", false, null, null, null, "AQAAAAIAAYagAAAAEEpoQRFQzG/FzWKo/jJ4Z58YJrAoS4Tasnf67ha95594q05UzYePRSegrrDS+CdOKg==", "+905430000000", true, "2d1265d0-ffd1-4290-b032-e55afebafce3", false, null });
 
             migrationBuilder.InsertData(
                 table: "Images",
                 columns: new[] { "Id", "AppUserId", "FileName", "FileType", "IsActive", "RegisteredDate" },
-                values: new object[] { new Guid("37e97a2f-7af7-45e6-aeb9-8a409f062cba"), new Guid("3279961c-856e-45b4-94f4-affdfdc1507d"), "defaultfile", ".jpg", true, new DateTime(2024, 4, 30, 16, 55, 58, 651, DateTimeKind.Local).AddTicks(5477) });
+                values: new object[] { new Guid("37e97a2f-7af7-45e6-aeb9-8a409f062cba"), new Guid("3279961c-856e-45b4-94f4-affdfdc1507d"), "defaultfile", ".jpg", true, new DateTime(2024, 4, 30, 19, 12, 25, 13, DateTimeKind.Local).AddTicks(3494) });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AppUserMeeting_UsersId",

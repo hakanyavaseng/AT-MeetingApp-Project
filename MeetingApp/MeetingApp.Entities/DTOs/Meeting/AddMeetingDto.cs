@@ -1,15 +1,17 @@
-﻿using MeetingApp.Core.Entities;
+﻿using MeetingApp.Entity.Entities;
 using MeetingApp.Entity.Entities.Identity;
+using Microsoft.AspNetCore.Http;
 
-namespace MeetingApp.Entity.Entities
+namespace MeetingApp.Entity.DTOs.Meeting
 {
-    public class Meeting : EntityBase
+    public record AddMeetingDto
     {
         public string Name { get; set; }
         public string Description { get; set; }
         public DateTime StartingDate { get; set; }
         public DateTime EndingDate { get; set; }
-        public ICollection<Document> Documents { get; set; } 
-        public ICollection<AppUser> Users { get; set; }
+        public IFormFile Document { get; set; }
+        public ICollection<Guid> UserIds  { get; set; }
     }
 }
+

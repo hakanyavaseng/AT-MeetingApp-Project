@@ -45,5 +45,7 @@ namespace MeetingApp.Data.Repositories.Concretes
                 query.AsNoTracking();
             return await query.FirstOrDefaultAsync();
         }
+        public async Task AddRangeAsync(IEnumerable<T> entities) => await Table.AddRangeAsync(entities);
+       
     }
 }

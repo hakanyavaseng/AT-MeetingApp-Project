@@ -2,8 +2,8 @@
 {
     public class EntityBase : IEntityBase
     {
-        public virtual Guid Id { get; set; }
-        public virtual DateTime RegisteredDate { get; set; }
-        public virtual bool? IsActive { get; set; }
+        public virtual Guid Id { get; set; } = Guid.NewGuid();
+        public virtual DateTime RegisteredDate { get; set; } = DateTime.Now;
+        public virtual bool? IsActive { get; set; } = true;
     }
 }

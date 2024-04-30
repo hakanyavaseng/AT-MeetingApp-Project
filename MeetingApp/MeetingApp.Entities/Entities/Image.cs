@@ -8,6 +8,6 @@ namespace MeetingApp.Entity.Entities
         public string FileName { get; set; }
         public string FileType { get; set; }
         public Guid AppUserId { get; set; }
-        public AppUser AppUser { get; set; }
+        public AppUser AppUser { get; set;}
     }
 }

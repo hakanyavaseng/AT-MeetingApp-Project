@@ -9,6 +9,7 @@ namespace MeetingApp.Data.Repositories.Abstractions
         Task<T?> GetAsync(Expression<Func<T, bool>> predicate = null, bool trackChanges = false);
         Task<T?> GetByIdAsync(Guid id, bool trackChanges = false);
         Task AddAsync(T entity);
+        Task AddRangeAsync(IEnumerable<T> entities);
         Task UpdateAsync(T entity);
         Task DeleteAsync(T entity);
     }

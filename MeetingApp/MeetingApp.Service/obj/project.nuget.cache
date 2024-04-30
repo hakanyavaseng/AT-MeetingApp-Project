@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "/Dw1k1CWsfPTeFvmiIoHerVLFi/WLFEzwdLxqT4ISQnPy7DwLHlNU0P+T1kVGe0HB3H5cfSL31TpkuDYcvjcPg==",
+  "dgSpecHash": "fV0unL3SPpfYL6x45qZHfzi6GnNmIOlUzNgq2lFZv6AQNdk1Rr9hiVItXgRFj+UmJqRljFOfTPDZIYH8ugAP9A==",
   "success": true,
   "projectFilePath": "C:\\Users\\hakan\\OneDrive\\Belgeler\\Github Repositories\\at-meeting-project\\MeetingApp\\MeetingApp.Service\\MeetingApp.Service.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,7 @@
     "C:\\Users\\hakan\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
     "C:\\Users\\hakan\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\7.0.18\\microsoft.aspnetcore.cryptography.internal.7.0.18.nupkg.sha512",
     "C:\\Users\\hakan\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\7.0.18\\microsoft.aspnetcore.cryptography.keyderivation.7.0.18.nupkg.sha512",
+    "C:\\Users\\hakan\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
     "C:\\Users\\hakan\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\7.0.18\\microsoft.aspnetcore.identity.entityframeworkcore.7.0.18.nupkg.sha512",
     "C:\\Users\\hakan\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\hakan\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
@@ -48,6 +49,7 @@
     "C:\\Users\\hakan\\.nuget\\packages\\system.formats.asn1\\5.0.0\\system.formats.asn1.5.0.0.nupkg.sha512",
     "C:\\Users\\hakan\\.nuget\\packages\\system.identitymodel.tokens.jwt\\6.35.0\\system.identitymodel.tokens.jwt.6.35.0.nupkg.sha512",
     "C:\\Users\\hakan\\.nuget\\packages\\system.io.filesystem.accesscontrol\\5.0.0\\system.io.filesystem.accesscontrol.5.0.0.nupkg.sha512",
+    "C:\\Users\\hakan\\.nuget\\packages\\system.io.pipelines\\5.0.2\\system.io.pipelines.5.0.2.nupkg.sha512",
     "C:\\Users\\hakan\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
     "C:\\Users\\hakan\\.nuget\\packages\\system.memory.data\\1.0.2\\system.memory.data.1.0.2.nupkg.sha512",
     "C:\\Users\\hakan\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
