@@ -1,12 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "QGCyX2LZrDYfZ/iPbxdD0jWVXcwxcsrXMfFVKhtByEEBklQZQIxBFmK4V034Bzs08jCK2sA8Bc7esDIyJFdARw==",
+  "dgSpecHash": "OdpMhAcVAcoaKVsv0fLYSGmx20Heeyw43LLh2jvwlRqdIynNt4SWDsSmRqZNzoC05zVQ+ctSPzGIzF65uF/Uiw==",
   "success": true,
   "projectFilePath": "C:\\Users\\hakan\\OneDrive\\Belgeler\\Github Repositories\\at-meeting-project\\MeetingApp\\MeetingApp.API\\MeetingApp.API.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\hakan\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\hakan\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\hakan\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
     "C:\\Users\\hakan\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\hakan\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\7.0.18\\microsoft.aspnetcore.authentication.jwtbearer.7.0.18.nupkg.sha512",
     "C:\\Users\\hakan\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\7.0.18\\microsoft.aspnetcore.cryptography.internal.7.0.18.nupkg.sha512",
     "C:\\Users\\hakan\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\7.0.18\\microsoft.aspnetcore.cryptography.keyderivation.7.0.18.nupkg.sha512",
     "C:\\Users\\hakan\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\7.0.18\\microsoft.aspnetcore.identity.entityframeworkcore.7.0.18.nupkg.sha512",
