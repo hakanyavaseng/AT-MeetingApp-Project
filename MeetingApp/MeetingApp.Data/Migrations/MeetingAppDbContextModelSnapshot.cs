@@ -68,7 +68,7 @@ namespace MeetingApp.Data.Migrations
 
                     b.HasIndex("MeetingId");
 
-                    b.ToTable("Document");
+                    b.ToTable("Documents");
                 });
 
             modelBuilder.Entity("MeetingApp.Entity.Entities.Identity.AppRole", b =>
@@ -174,6 +174,25 @@ namespace MeetingApp.Data.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("3279961c-856e-45b4-94f4-affdfdc1507d"),
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "89c8815f-da67-43c6-bbc5-3a34eee9bdaf",
+                            Email = "hakanyavaseng@gmail.com",
+                            EmailConfirmed = true,
+                            FirstName = "Hakan",
+                            ImageId = new Guid("37e97a2f-7af7-45e6-aeb9-8a409f062cba"),
+                            LastName = "Yavaş",
+                            LockoutEnabled = false,
+                            PasswordHash = "AQAAAAIAAYagAAAAEI5+rWQ6S7i16rISDWdJdZHwHTJ1UZgc0i5kR3tQ2TERGsht3E7G+QMs4+X0lAS3ow==",
+                            PhoneNumber = "+905430000000",
+                            PhoneNumberConfirmed = true,
+                            SecurityStamp = "2a6cb3ba-0680-4bad-8df3-002405497fdf",
+                            TwoFactorEnabled = false
+                        });
                 });
 
             modelBuilder.Entity("MeetingApp.Entity.Entities.Image", b =>
@@ -203,7 +222,18 @@ namespace MeetingApp.Data.Migrations
 
                     b.HasIndex("AppUserId");
 
-                    b.ToTable("Image");
+                    b.ToTable("Images");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("37e97a2f-7af7-45e6-aeb9-8a409f062cba"),
+                            AppUserId = new Guid("3279961c-856e-45b4-94f4-affdfdc1507d"),
+                            FileName = "defaultfile",
+                            FileType = ".jpg",
+                            IsActive = true,
+                            RegisteredDate = new DateTime(2024, 4, 30, 16, 55, 58, 651, DateTimeKind.Local).AddTicks(5477)
+                        });
                 });
 
             modelBuilder.Entity("MeetingApp.Entity.Entities.Meeting", b =>
@@ -234,7 +264,7 @@ namespace MeetingApp.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Meeting");
+                    b.ToTable("Meetings");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>

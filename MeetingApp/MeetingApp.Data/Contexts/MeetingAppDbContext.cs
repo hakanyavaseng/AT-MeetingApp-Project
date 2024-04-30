@@ -1,4 +1,5 @@
-﻿using MeetingApp.Entity.Entities.Identity;
+﻿using MeetingApp.Entity.Entities;
+using MeetingApp.Entity.Entities.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
@@ -8,6 +9,9 @@ namespace MeetingApp.Data.Contexts
 {
     public class MeetingAppDbContext : IdentityDbContext<AppUser, AppRole, Guid>
     {
+        public DbSet<Meeting> Meetings { get; set; }
+        public DbSet<Document> Documents { get; set; }
+        public DbSet<Image> Images { get; set; }
         public MeetingAppDbContext(DbContextOptions options) : base(options)
         {
         }

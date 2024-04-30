@@ -24,8 +24,4 @@
     <ProjectReference Include="..\MeetingApp.Entities\MeetingApp.Entity.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Configurations\" />
-  </ItemGroup>
-
 </Project>
