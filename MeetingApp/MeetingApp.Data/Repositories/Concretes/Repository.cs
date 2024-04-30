@@ -16,7 +16,6 @@ namespace MeetingApp.Data.Repositories.Concretes
             _context = context;
         }
 
-
         public async Task AddAsync(T entity) => await Table.AddAsync(entity);
         public async Task UpdateAsync(T entity) => await Task.Run(() => Table.Update(entity));
         public async Task DeleteAsync(T entity) => await Task.Run(() => Table.Remove(entity));

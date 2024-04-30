@@ -1,4 +1,6 @@
 ﻿using MeetingApp.Data.Contexts;
+using MeetingApp.Data.Repositories.Abstractions;
+using MeetingApp.Data.Repositories.Concretes;
 using MeetingApp.Entity.Entities.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -29,6 +31,9 @@ namespace MeetingApp.Data.Extensions
             })
                 .AddRoles<AppRole>()
                 .AddEntityFrameworkStores<MeetingAppDbContext>();
+
+            //Repositories
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
         }
     }
