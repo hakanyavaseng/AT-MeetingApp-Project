@@ -20,7 +20,12 @@ namespace MeetingApp.Service.Mail
             var email = new MimeMessage();
 
             email.From.Add(new MailboxAddress(_mailSettings.DisplayName, _mailSettings.Mail));
-            email.To.Add(MailboxAddress.Parse(mailRequest.ToEmail));
+
+            foreach(var mail in mailRequest.ToEmail)
+            {
+                email.To.Add(MailboxAddress.Parse(mail));
+            }
+
             email.Subject = mailRequest.Subject;
 
             var builder = new BodyBuilder();

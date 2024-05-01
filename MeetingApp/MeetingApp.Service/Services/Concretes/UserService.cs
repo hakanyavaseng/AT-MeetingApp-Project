@@ -1,12 +1,9 @@
 ﻿using AutoMapper;
-using MeetingApp.Data.Repositories.Abstractions;
 using MeetingApp.Entity.DTOs.User;
-using MeetingApp.Entity.Entities;
 using MeetingApp.Entity.Entities.Identity;
 using MeetingApp.Service.Auth;
 using MeetingApp.Service.Mail;
 using MeetingApp.Service.Services.Abstractions;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using System.IdentityModel.Tokens.Jwt;
 
@@ -34,7 +31,12 @@ namespace MeetingApp.Service.Services.Concretes
 
             if (result.Succeeded)
             {
-               // await _mailService.SendMailAsync(userAddDto.Email, "Your registration has been completed!", $@"Dear {userAddDto.FirstName} {userAddDto.LastName}, welcome to MeetingApp!");
+                await _mailService.SendEmailAsync(new MailRequest()
+                {
+                    ToEmail = new string[] { userAddDto.Email },
+                    Subject = "Your registration has been completed!",
+                    Body = $"Dear {userAddDto.FirstName} {userAddDto.LastName}, welcome to MeetingApp!"
+                });
                 return true;
             }
             return false;

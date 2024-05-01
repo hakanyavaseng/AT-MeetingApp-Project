@@ -46,7 +46,7 @@ namespace MeetingApp.API.Controllers
         {
             await mailService.SendEmailAsync(new MailRequest()
             {
-                ToEmail = "hakanyavaspm@gmail.com",
+                ToEmail = new string[] { "hakanyavaspm@gmail.com" },
                 Subject = "Test",
                 Body = "Test Body!",
             });

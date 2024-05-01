@@ -1,8 +1,9 @@
-﻿using MeetingApp.Entity.Entities.Identity;
+﻿using MeetingApp.Core.Entities;
+using MeetingApp.Entity.Entities.Identity;
 
 namespace MeetingApp.Entity.Entities
 {
-    public class AppUserMeeting
+    public class AppUserMeeting : EntityBase
     {
         public Guid AppUserId { get; set; }
         public Guid MeetingId { get; set; }
