@@ -1,5 +1,4 @@
 ﻿using MeetingApp.Core.Entities;
-using MeetingApp.Entity.Entities.Identity;
 
 namespace MeetingApp.Entity.Entities
 {
@@ -9,7 +8,6 @@ namespace MeetingApp.Entity.Entities
         public string Description { get; set; }
         public DateTime StartingDate { get; set; }
         public DateTime EndingDate { get; set; }
-        public ICollection<Document> Documents { get; set; } 
-        public ICollection<AppUser> Users { get; set; }
+        public ICollection<AppUserMeeting> AppUserMeetings { get; set; }
     }
 }

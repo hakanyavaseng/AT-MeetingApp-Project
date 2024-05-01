@@ -1,4 +1,6 @@
-﻿namespace MeetingApp.Entity.DTOs.User
+﻿using Microsoft.AspNetCore.Http;
+
+namespace MeetingApp.Entity.DTOs.User
 {
     public record UserAddDto
     {
@@ -8,6 +10,6 @@
         public string Email { get; init; }
         public string PhoneNumber { get; init; }
         public string Password { get; init; }
-        public string ImageId { get; init; }
+        public IFormFile Image { get; set; }
     }
 }

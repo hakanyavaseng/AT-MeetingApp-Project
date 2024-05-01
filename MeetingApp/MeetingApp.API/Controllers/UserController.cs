@@ -16,7 +16,7 @@ namespace MeetingApp.API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateUser([FromBody] UserAddDto userAddDto)
+        public async Task<IActionResult> CreateUser([FromForm] UserAddDto userAddDto)
         {
             if (userAddDto == null)
                 return BadRequest(ModelState);

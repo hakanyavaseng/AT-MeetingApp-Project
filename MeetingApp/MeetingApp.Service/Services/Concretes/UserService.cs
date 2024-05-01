@@ -1,9 +1,11 @@
 ﻿using AutoMapper;
 using MeetingApp.Data.Repositories.Abstractions;
 using MeetingApp.Entity.DTOs.User;
+using MeetingApp.Entity.Entities;
 using MeetingApp.Entity.Entities.Identity;
 using MeetingApp.Service.Auth;
 using MeetingApp.Service.Services.Abstractions;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using System.IdentityModel.Tokens.Jwt;
 
@@ -24,8 +26,6 @@ namespace MeetingApp.Service.Services.Concretes
         public async Task<bool> CreateUserAsync(UserAddDto userAddDto)
         {
             AppUser entityToAdd = _mapper.Map<AppUser>(userAddDto);
-            entityToAdd.Id = Guid.NewGuid();
-
             IdentityResult result = await _userManager.CreateAsync(entityToAdd, userAddDto.Password);
 
             if (result.Succeeded)

@@ -10,8 +10,7 @@ namespace MeetingApp.Data.Contexts
     public class MeetingAppDbContext : IdentityDbContext<AppUser, AppRole, Guid>
     {
         public DbSet<Meeting> Meetings { get; set; }
-        public DbSet<Document> Documents { get; set; }
-        public DbSet<Image> Images { get; set; }
+        public DbSet<AppUserMeeting> AppUserMeetings { get; set; }
         public MeetingAppDbContext(DbContextOptions options) : base(options)
         {
         }

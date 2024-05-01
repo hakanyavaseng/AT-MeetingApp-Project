@@ -32,7 +32,6 @@ namespace MeetingApp.Data.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ImageId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -177,88 +176,33 @@ namespace MeetingApp.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Images",
+                name: "AppUserMeetings",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    FileName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    FileType = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     AppUserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    RegisteredDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    IsActive = table.Column<bool>(type: "bit", nullable: true)
+                    MeetingId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Images", x => x.Id);
+                    table.PrimaryKey("PK_AppUserMeetings", x => new { x.AppUserId, x.MeetingId });
                     table.ForeignKey(
-                        name: "FK_Images_AspNetUsers_AppUserId",
+                        name: "FK_AppUserMeetings_AspNetUsers_AppUserId",
                         column: x => x.AppUserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "AppUserMeeting",
-                columns: table => new
-                {
-                    MeetingsId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    UsersId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_AppUserMeeting", x => new { x.MeetingsId, x.UsersId });
                     table.ForeignKey(
-                        name: "FK_AppUserMeeting_AspNetUsers_UsersId",
-                        column: x => x.UsersId,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_AppUserMeeting_Meetings_MeetingsId",
-                        column: x => x.MeetingsId,
-                        principalTable: "Meetings",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Documents",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    FileName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    FileType = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    MeetingId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    RegisteredDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    IsActive = table.Column<bool>(type: "bit", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Documents", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Documents_Meetings_MeetingId",
+                        name: "FK_AppUserMeetings_Meetings_MeetingId",
                         column: x => x.MeetingId,
                         principalTable: "Meetings",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.InsertData(
-                table: "AspNetUsers",
-                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "ImageId", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { new Guid("3279961c-856e-45b4-94f4-affdfdc1507d"), 0, "16e2e7f5-625f-4f63-8671-b5256051ff26", "hakanyavaseng@gmail.com", true, "Hakan", new Guid("37e97a2f-7af7-45e6-aeb9-8a409f062cba"), "Yavaş", false, null, null, null, "AQAAAAIAAYagAAAAEEpoQRFQzG/FzWKo/jJ4Z58YJrAoS4Tasnf67ha95594q05UzYePRSegrrDS+CdOKg==", "+905430000000", true, "2d1265d0-ffd1-4290-b032-e55afebafce3", false, null });
-
-            migrationBuilder.InsertData(
-                table: "Images",
-                columns: new[] { "Id", "AppUserId", "FileName", "FileType", "IsActive", "RegisteredDate" },
-                values: new object[] { new Guid("37e97a2f-7af7-45e6-aeb9-8a409f062cba"), new Guid("3279961c-856e-45b4-94f4-affdfdc1507d"), "defaultfile", ".jpg", true, new DateTime(2024, 4, 30, 19, 12, 25, 13, DateTimeKind.Local).AddTicks(3494) });
-
             migrationBuilder.CreateIndex(
-                name: "IX_AppUserMeeting_UsersId",
-                table: "AppUserMeeting",
-                column: "UsersId");
+                name: "IX_AppUserMeetings_MeetingId",
+                table: "AppUserMeetings",
+                column: "MeetingId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -298,23 +242,13 @@ namespace MeetingApp.Data.Migrations
                 column: "NormalizedUserName",
                 unique: true,
                 filter: "[NormalizedUserName] IS NOT NULL");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Documents_MeetingId",
-                table: "Documents",
-                column: "MeetingId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Images_AppUserId",
-                table: "Images",
-                column: "AppUserId");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "AppUserMeeting");
+                name: "AppUserMeetings");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoleClaims");
@@ -332,16 +266,10 @@ namespace MeetingApp.Data.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Documents");
-
-            migrationBuilder.DropTable(
-                name: "Images");
+                name: "Meetings");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
-
-            migrationBuilder.DropTable(
-                name: "Meetings");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");

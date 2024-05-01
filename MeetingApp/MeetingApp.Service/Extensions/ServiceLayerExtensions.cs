@@ -14,7 +14,6 @@ namespace MeetingApp.Service.Extensions
             //Adding services
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IMeetingService, MeetingService>();
-            services.AddScoped<IDocumentService, DocumentService>();
 
             //AutoMapper
             services.AddAutoMapper(Assembly.GetExecutingAssembly());

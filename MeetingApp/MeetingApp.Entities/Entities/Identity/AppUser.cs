@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MeetingApp.Entity.Entities.Identity
 {
@@ -6,8 +7,6 @@ namespace MeetingApp.Entity.Entities.Identity
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public Guid ImageId { get; set; }
-        public ICollection<Image> Images { get; set; }
-        public ICollection<Meeting> Meetings { get; set; }
+        public ICollection<AppUserMeeting> AppUserMeetings { get; set; }
     }
 }

@@ -1,3 +1,4 @@
+using MeetingApp.API.Extensions;
 using MeetingApp.Data.Extensions;
 using MeetingApp.Service.Extensions;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -36,7 +37,10 @@ builder.Services.AddAuthentication(options =>
         ClockSkew = TimeSpan.Zero
     };
 });
+
 var app = builder.Build();
+
+app.ConfigureDefaultAdminUser();
 
 if (app.Environment.IsDevelopment())
 {
@@ -45,6 +49,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 

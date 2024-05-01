@@ -27,6 +27,7 @@ namespace MeetingApp.Data.Extensions
                 opt.Password.RequireDigit = false;
                 opt.Password.RequireLowercase = false;
                 opt.Password.RequireUppercase = false;
+                opt.User.RequireUniqueEmail = true;
                 opt.SignIn.RequireConfirmedEmail = false;
             })
                 .AddRoles<AppRole>()

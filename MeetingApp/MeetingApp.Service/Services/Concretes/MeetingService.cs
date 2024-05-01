@@ -10,14 +10,12 @@ namespace MeetingApp.Service.Services.Concretes
     public class MeetingService : IMeetingService
     {
         private readonly IRepositoryManager _repositoryManager;
-        private readonly IDocumentService documentService;
         private readonly IMapper _mapper;
 
-        public MeetingService(IRepositoryManager repositoryManager, IMapper mapper, IDocumentService documentService)
+        public MeetingService(IRepositoryManager repositoryManager, IMapper mapper)
         {
             _repositoryManager = repositoryManager;
             _mapper = mapper;
-            this.documentService = documentService;
         }
 
         public async Task<IList<MeetingListDto>> GetAllMeetings()
@@ -29,21 +27,10 @@ namespace MeetingApp.Service.Services.Concretes
         public async Task<bool> CreateMeeting(AddMeetingDto addMeetingDto)
         {
             Meeting meeting = _mapper.Map<Meeting>(addMeetingDto);
-            Document document = await documentService.UploadFileAsync(addMeetingDto.Document);
-            meeting.Documents = new List<Document>();
-            meeting.Documents.Add(document);
-
+  
             await _repositoryManager.GetRepository<Meeting>().AddAsync(meeting);
 
-            await documentService.AddDocumentAsync(new()
-            {
-                Document = document,
-                MeetingId = meeting.Id,
-            });
-
             return true;
-
-
         }
 
         public Task<bool> DeleteMeeting(int id)

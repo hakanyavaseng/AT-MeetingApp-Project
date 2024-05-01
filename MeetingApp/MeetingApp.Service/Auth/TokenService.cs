@@ -27,6 +27,13 @@ namespace MeetingApp.Service.Auth
                 new Claim(JwtRegisteredClaimNames.Email, user.Email)
             };
 
+            var roles = await _userManager.GetRolesAsync(user);
+
+            foreach (var role in roles)
+            {
+                claims.Add(new Claim(ClaimTypes.Role, role));
+            }
+
             SymmetricSecurityKey key = new(Encoding.UTF8.GetBytes(_configuration["JWT:Secret"]));
 
             JwtSecurityToken token = new(

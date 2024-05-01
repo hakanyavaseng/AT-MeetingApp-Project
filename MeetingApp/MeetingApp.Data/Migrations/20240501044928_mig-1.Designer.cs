@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MeetingApp.Data.Migrations
 {
     [DbContext(typeof(MeetingAppDbContext))]
-    [Migration("20240430161225_mig-1")]
+    [Migration("20240501044928_mig-1")]
     partial class mig1
     {
         /// <inheritdoc />
@@ -25,53 +25,19 @@ namespace MeetingApp.Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("AppUserMeeting", b =>
+            modelBuilder.Entity("MeetingApp.Entity.Entities.AppUserMeeting", b =>
                 {
-                    b.Property<Guid>("MeetingsId")
+                    b.Property<Guid>("AppUserId")
                         .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("UsersId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("MeetingsId", "UsersId");
-
-                    b.HasIndex("UsersId");
-
-                    b.ToTable("AppUserMeeting");
-                });
-
-            modelBuilder.Entity("MeetingApp.Entity.Entities.Document", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("FileName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FileType")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool?>("IsActive")
-                        .HasColumnType("bit");
 
                     b.Property<Guid>("MeetingId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("RegisteredDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
+                    b.HasKey("AppUserId", "MeetingId");
 
                     b.HasIndex("MeetingId");
 
-                    b.ToTable("Documents");
+                    b.ToTable("AppUserMeetings");
                 });
 
             modelBuilder.Entity("MeetingApp.Entity.Entities.Identity.AppRole", b =>
@@ -126,9 +92,6 @@ namespace MeetingApp.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("ImageId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<string>("LastName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -177,66 +140,6 @@ namespace MeetingApp.Data.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("3279961c-856e-45b4-94f4-affdfdc1507d"),
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "16e2e7f5-625f-4f63-8671-b5256051ff26",
-                            Email = "hakanyavaseng@gmail.com",
-                            EmailConfirmed = true,
-                            FirstName = "Hakan",
-                            ImageId = new Guid("37e97a2f-7af7-45e6-aeb9-8a409f062cba"),
-                            LastName = "Yavaş",
-                            LockoutEnabled = false,
-                            PasswordHash = "AQAAAAIAAYagAAAAEEpoQRFQzG/FzWKo/jJ4Z58YJrAoS4Tasnf67ha95594q05UzYePRSegrrDS+CdOKg==",
-                            PhoneNumber = "+905430000000",
-                            PhoneNumberConfirmed = true,
-                            SecurityStamp = "2d1265d0-ffd1-4290-b032-e55afebafce3",
-                            TwoFactorEnabled = false
-                        });
-                });
-
-            modelBuilder.Entity("MeetingApp.Entity.Entities.Image", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("AppUserId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("FileName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FileType")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool?>("IsActive")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime>("RegisteredDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AppUserId");
-
-                    b.ToTable("Images");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("37e97a2f-7af7-45e6-aeb9-8a409f062cba"),
-                            AppUserId = new Guid("3279961c-856e-45b4-94f4-affdfdc1507d"),
-                            FileName = "defaultfile",
-                            FileType = ".jpg",
-                            IsActive = true,
-                            RegisteredDate = new DateTime(2024, 4, 30, 19, 12, 25, 13, DateTimeKind.Local).AddTicks(3494)
-                        });
                 });
 
             modelBuilder.Entity("MeetingApp.Entity.Entities.Meeting", b =>
@@ -373,41 +276,23 @@ namespace MeetingApp.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("AppUserMeeting", b =>
-                {
-                    b.HasOne("MeetingApp.Entity.Entities.Meeting", null)
-                        .WithMany()
-                        .HasForeignKey("MeetingsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("MeetingApp.Entity.Entities.Identity.AppUser", null)
-                        .WithMany()
-                        .HasForeignKey("UsersId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("MeetingApp.Entity.Entities.Document", b =>
-                {
-                    b.HasOne("MeetingApp.Entity.Entities.Meeting", "Meeting")
-                        .WithMany("Documents")
-                        .HasForeignKey("MeetingId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Meeting");
-                });
-
-            modelBuilder.Entity("MeetingApp.Entity.Entities.Image", b =>
+            modelBuilder.Entity("MeetingApp.Entity.Entities.AppUserMeeting", b =>
                 {
                     b.HasOne("MeetingApp.Entity.Entities.Identity.AppUser", "AppUser")
-                        .WithMany("Images")
+                        .WithMany("AppUserMeetings")
                         .HasForeignKey("AppUserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("MeetingApp.Entity.Entities.Meeting", "Meeting")
+                        .WithMany("AppUserMeetings")
+                        .HasForeignKey("MeetingId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("AppUser");
+
+                    b.Navigation("Meeting");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
@@ -463,12 +348,12 @@ namespace MeetingApp.Data.Migrations
 
             modelBuilder.Entity("MeetingApp.Entity.Entities.Identity.AppUser", b =>
                 {
-                    b.Navigation("Images");
+                    b.Navigation("AppUserMeetings");
                 });
 
             modelBuilder.Entity("MeetingApp.Entity.Entities.Meeting", b =>
                 {
-                    b.Navigation("Documents");
+                    b.Navigation("AppUserMeetings");
                 });
 #pragma warning restore 612, 618
         }
