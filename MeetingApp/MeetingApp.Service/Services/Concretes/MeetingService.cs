@@ -66,15 +66,25 @@ namespace MeetingApp.Service.Services.Concretes
 
         }
 
-        public Task<bool> DeleteMeeting(int id)
+        public async Task<bool> DeleteMeeting(string id)
         {
-            throw new NotImplementedException();
+            var meeting = await _repositoryManager.GetRepository<Meeting>().GetByIdAsync(Guid.Parse(id));
+            await _repositoryManager.GetRepository<Meeting>().DeleteAsync(meeting);
+            await _repositoryManager.SaveAsync();
+            return true;
         }
 
-
-        public Task<bool> UpdateMeeting(UpdateMeetingDto updateMeetingDto)
+        public async Task<bool> UpdateMeeting(UpdateMeetingDto updateMeetingDto)
         {
-            throw new NotImplementedException();
+            Meeting? meetingToUpdate = await _repositoryManager.GetRepository<Meeting>().GetAsync(p => p.Id.Equals(updateMeetingDto.Id),false);
+            
+            if(meetingToUpdate is null)
+                throw new ArgumentNullException(nameof(meetingToUpdate));
+
+            _mapper.Map(updateMeetingDto, meetingToUpdate);
+
+            await _repositoryManager.SaveAsync();
+            return true;
         }
     }
 }

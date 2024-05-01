@@ -1,4 +1,5 @@
-﻿using MeetingApp.Data.Contexts;
+﻿using MeetingApp.Core.Entities;
+using MeetingApp.Data.Contexts;
 using MeetingApp.Data.Repositories.Abstractions;
 
 namespace MeetingApp.Data.Repositories.Concretes

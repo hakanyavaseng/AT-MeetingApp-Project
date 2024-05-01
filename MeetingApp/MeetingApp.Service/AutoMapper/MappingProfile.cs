@@ -13,6 +13,7 @@ namespace MeetingApp.Service.AutoMapper
             CreateMap<UserAddDto, AppUser>().ReverseMap();
             CreateMap<Meeting, MeetingListDto>().ReverseMap();
             CreateMap<AddMeetingDto, Meeting>().ReverseMap();
+            CreateMap<UpdateMeetingDto, Meeting>().ReverseMap();
         }
     }
 }

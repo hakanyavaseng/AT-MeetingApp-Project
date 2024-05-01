@@ -7,6 +7,6 @@ namespace MeetingApp.Service.Services.Abstractions
         Task<IList<MeetingListDto>> GetAllMeetings();
         Task<bool> CreateMeeting(AddMeetingDto addMeetingDto);
         Task<bool> UpdateMeeting(UpdateMeetingDto updateMeetingDto);
-        Task<bool> DeleteMeeting(int id);
+        Task<bool> DeleteMeeting(string id);
     }
 }

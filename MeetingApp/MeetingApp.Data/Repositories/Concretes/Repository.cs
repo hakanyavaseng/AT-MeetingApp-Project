@@ -6,7 +6,7 @@ using System.Linq.Expressions;
 
 namespace MeetingApp.Data.Repositories.Concretes
 {
-    public class Repository<T> : IRepository<T> where T : class, IEntityBase, new()
+    public class Repository<T> : IRepository<T> where T : EntityBase
     {
         private readonly MeetingAppDbContext _context;
         private DbSet<T> Table { get => _context.Set<T>(); }
@@ -17,7 +17,7 @@ namespace MeetingApp.Data.Repositories.Concretes
         }
 
         public async Task AddAsync(T entity) => await Table.AddAsync(entity);
-        public async Task UpdateAsync(T entity) => await Task.Run(() => Table.Update(entity));
+        public void Update(T entity) => Table.Update(entity);
         public async Task DeleteAsync(T entity) => await Task.Run(() => Table.Remove(entity));
         public IQueryable<T> GetAllAsync(Expression<Func<T, bool>> predicate = null, bool trackChanges = false)
         {
@@ -43,7 +43,7 @@ namespace MeetingApp.Data.Repositories.Concretes
             IQueryable<T> query = Table;
             if (!trackChanges)
                 query.AsNoTracking();
-            return await query.FirstOrDefaultAsync();
+            return await query.FirstOrDefaultAsync(p => p.Id.Equals(id));
         }
         public async Task AddRangeAsync(IEnumerable<T> entities) => await Table.AddRangeAsync(entities);
        

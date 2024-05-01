@@ -1,6 +1,4 @@
-﻿using MeetingApp.Entity.Entities;
-using MeetingApp.Entity.Entities.Identity;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 
 namespace MeetingApp.Entity.DTOs.Meeting
 {

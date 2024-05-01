@@ -30,5 +30,17 @@ namespace MeetingApp.API.Controllers
             return Ok(await _meetingService.CreateMeeting(meetingDto));
         }
 
+        [HttpPut]
+        public async Task<IActionResult> Update([FromForm] UpdateMeetingDto meetingDto)
+        {
+            return Ok(await _meetingService.UpdateMeeting(meetingDto));
+        }
+
+        [HttpDelete()]
+        public async Task<IActionResult> Delete([FromQuery] string id)
+        {
+            return Ok(await _meetingService.DeleteMeeting(id));
+        }
+
     }
 }

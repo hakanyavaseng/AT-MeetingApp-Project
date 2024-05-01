@@ -1,6 +1,15 @@
-﻿namespace MeetingApp.Entity.DTOs.Meeting
+﻿using Microsoft.AspNetCore.Http;
+
+namespace MeetingApp.Entity.DTOs.Meeting
 {
     public record UpdateMeetingDto
     {
+        public Guid Id { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public DateTime StartingDate { get; set; }
+        public DateTime EndingDate { get; set; }
+        public IFormFile Document { get; set; }
+        public ICollection<Guid> UserIds { get; set; }
     }
 }

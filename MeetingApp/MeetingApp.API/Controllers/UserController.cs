@@ -41,16 +41,5 @@ namespace MeetingApp.API.Controllers
             return Ok(await _userService.LoginAsync(userLoginDto));
         }
 
-        [HttpGet]
-        public async Task MailTest()
-        {
-            await mailService.SendEmailAsync(new MailRequest()
-            {
-                ToEmail = new string[] { "hakanyavaspm@gmail.com" },
-                Subject = "Test",
-                Body = "Test Body!",
-            });
-     
-        }
     }
 }
