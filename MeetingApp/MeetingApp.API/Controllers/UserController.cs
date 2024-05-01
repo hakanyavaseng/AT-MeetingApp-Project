@@ -1,4 +1,5 @@
 ﻿using MeetingApp.Entity.DTOs.User;
+using MeetingApp.Service.Mail;
 using MeetingApp.Service.Services.Abstractions;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,10 +10,12 @@ namespace MeetingApp.API.Controllers
     public class UserController : ControllerBase
     {
         private readonly IUserService _userService;
+        private readonly IMailService mailService;
 
-        public UserController(IUserService service)
+        public UserController(IUserService service, IMailService mailService)
         {
             _userService = service;
+            this.mailService = mailService;
         }
 
         [HttpPost]
@@ -36,6 +39,18 @@ namespace MeetingApp.API.Controllers
                 return BadRequest(ModelState);
 
             return Ok(await _userService.LoginAsync(userLoginDto));
+        }
+
+        [HttpGet]
+        public async Task MailTest()
+        {
+            await mailService.SendEmailAsync(new MailRequest()
+            {
+                ToEmail = "hakanyavaspm@gmail.com",
+                Subject = "Test",
+                Body = "Test Body!",
+            });
+     
         }
     }
 }

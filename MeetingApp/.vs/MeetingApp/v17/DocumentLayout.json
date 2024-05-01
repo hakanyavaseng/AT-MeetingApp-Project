@@ -3,8 +3,15 @@
   "WorkspaceRootPath": "C:\\Users\\hakan\\OneDrive\\Belgeler\\Github Repositories\\at-meeting-project\\MeetingApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C9566CE6-D6C1-45C6-AA77-C4BB505C8F2F}|MeetingApp.Service\\MeetingApp.Service.csproj|c:\\users\\hakan\\onedrive\\belgeler\\github repositories\\at-meeting-project\\meetingapp\\meetingapp.service\\auth\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C9566CE6-D6C1-45C6-AA77-C4BB505C8F2F}|MeetingApp.Service\\MeetingApp.Service.csproj|solutionrelative:meetingapp.service\\auth\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{32023351-3BE9-4880-8C53-13C4A78D9841}|MeetingApp.API\\MeetingApp.API.csproj|c:\\users\\hakan\\onedrive\\belgeler\\github repositories\\at-meeting-project\\meetingapp\\meetingapp.api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32023351-3BE9-4880-8C53-13C4A78D9841}|MeetingApp.API\\MeetingApp.API.csproj|solutionrelative:meetingapp.api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C9566CE6-D6C1-45C6-AA77-C4BB505C8F2F}|MeetingApp.Service\\MeetingApp.Service.csproj|c:\\users\\hakan\\onedrive\\belgeler\\github repositories\\at-meeting-project\\meetingapp\\meetingapp.service\\mail\\mailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C9566CE6-D6C1-45C6-AA77-C4BB505C8F2F}|MeetingApp.Service\\MeetingApp.Service.csproj|solutionrelative:meetingapp.service\\mail\\mailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\hakan\\AppData\\Roaming\\Microsoft\\UserSecrets\\e35fba22-f2b3-4bb5-9b8a-43add9c680cc\\secrets.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +26,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "TokenService.cs",
-              "DocumentMoniker": "C:\\Users\\hakan\\OneDrive\\Belgeler\\Github Repositories\\at-meeting-project\\MeetingApp\\MeetingApp.Service\\Auth\\TokenService.cs",
-              "RelativeDocumentMoniker": "MeetingApp.Service\\Auth\\TokenService.cs",
-              "ToolTip": "C:\\Users\\hakan\\OneDrive\\Belgeler\\Github Repositories\\at-meeting-project\\MeetingApp\\MeetingApp.Service\\Auth\\TokenService.cs",
-              "RelativeToolTip": "MeetingApp.Service\\Auth\\TokenService.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAAwCEAAAAyAAAA",
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\hakan\\OneDrive\\Belgeler\\Github Repositories\\at-meeting-project\\MeetingApp\\MeetingApp.API\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "MeetingApp.API\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\hakan\\OneDrive\\Belgeler\\Github Repositories\\at-meeting-project\\MeetingApp\\MeetingApp.API\\Controllers\\UserController.cs",
+              "RelativeToolTip": "MeetingApp.API\\Controllers\\UserController.cs",
+              "ViewState": "AQIAACkAAAAAAAAAAAAgwDAAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-01T04:51:56.828Z",
+              "WhenOpened": "2024-05-01T06:50:16.3Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MailService.cs",
+              "DocumentMoniker": "C:\\Users\\hakan\\OneDrive\\Belgeler\\Github Repositories\\at-meeting-project\\MeetingApp\\MeetingApp.Service\\Mail\\MailService.cs",
+              "RelativeDocumentMoniker": "MeetingApp.Service\\Mail\\MailService.cs",
+              "ToolTip": "C:\\Users\\hakan\\OneDrive\\Belgeler\\Github Repositories\\at-meeting-project\\MeetingApp\\MeetingApp.Service\\Mail\\MailService.cs",
+              "RelativeToolTip": "MeetingApp.Service\\Mail\\MailService.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAQwCIAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-01T06:47:57.245Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "secrets.json",
+              "DocumentMoniker": "C:\\Users\\hakan\\AppData\\Roaming\\Microsoft\\UserSecrets\\e35fba22-f2b3-4bb5-9b8a-43add9c680cc\\secrets.json",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\AppData\\Roaming\\Microsoft\\UserSecrets\\e35fba22-f2b3-4bb5-9b8a-43add9c680cc\\secrets.json",
+              "ToolTip": "C:\\Users\\hakan\\AppData\\Roaming\\Microsoft\\UserSecrets\\e35fba22-f2b3-4bb5-9b8a-43add9c680cc\\secrets.json",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\AppData\\Roaming\\Microsoft\\UserSecrets\\e35fba22-f2b3-4bb5-9b8a-43add9c680cc\\secrets.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-05-01T06:47:41.674Z",
               "EditorCaption": ""
             }
           ]
