@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MeetingApp.API.Controllers
 {
-    //[Authorize(Roles ="User")]
+    [Authorize(Roles ="User")]
     [Route("api/[controller]/[action]")]
     [ApiController]
     public class MeetingsController : ControllerBase
