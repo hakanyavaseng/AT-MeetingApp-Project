@@ -6,38 +6,52 @@
             <a class="btn btn-primary" asp-area="Admin" asp-controller="Meetings" asp-action="Create">Add Meeting</a>
         </div>
     </div>
-
+    <hr />
+    <h3 class="text text-primary">Aktif Toplantılar</h3>
     <div class="row mt-3">
+
         <div class="col-md-12">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Meeting Name</th>
-                        <th>Start Date</th>
-                        <th>End Date</th>
-                        <th>Description</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var item in Model)
-                    {
+            @if (Model.Count == 0)
+            {
+                <h3 class="text text-danger">Şu anda aktif toplantı yok!</h3>
+
+            }
+            else
+            {
+                <table class="table">
+                    <thead>
                         <tr>
-                            <td>@item.Name</td>
-                            <td>@item.StartingDate.ToShortDateString() @item.StartingDate.ToShortTimeString()</td>
-                            <td>@item.EndingDate.ToShortDateString() @item.EndingDate.ToShortTimeString()</td>
-                            <td>@item.Description</td>
-                            <td>
-                                <div class="btn-group" role="group">
-                                    <a href="#" class="btn btn-success" title="Complete"><i class='bx bx-check'></i></a>
-                                    <a asp-controller="Meetings" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger" title="Delete"><i class='bx bx-trash'></i></a>
-                                    <a href="#" class="btn btn-primary" title="Update"><i class='bx bx-pencil'></i></a>
-                                </div>
-                            </td>
+                            <th>Toplantı Adı</th>
+                            <th>Başlangıç</th>
+                            <th>Bitiş</th>
+                            <th>Açıklama</th>
+                            <th>Operasyonlar</th>
                         </tr>
-                    }
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+
+
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Name</td>
+                                <td>@item.StartingDate.ToShortDateString() @item.StartingDate.ToShortTimeString()</td>
+                                <td>@item.EndingDate.ToShortDateString() @item.EndingDate.ToShortTimeString()</td>
+                                <td>@item.Description</td>
+                                <td>
+                                    <div class="btn-group" role="group">
+                                        <a asp-controller="Meetings" asp-action="Complete" asp-route-id="@item.Id" class="btn btn-success" title="Complete"><i class='bx bx-check'></i></a>
+                                        <a asp-controller="Meetings" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger" title="Delete"><i class='bx bx-trash'></i></a>
+                                        <a asp-controller="Meetings" asp-action="Update" asp-route-id="@item.Id" class="btn btn-primary" title="Update"><i class='bx bx-pencil'></i></a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+
         </div>
     </div>
 </div>

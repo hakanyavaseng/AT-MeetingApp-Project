@@ -1,0 +1,51 @@
+﻿@model MeetingApp.Entity.DTOs.Meeting.UpdateMeetingDto
+<div class="row">
+    <div class="col-md-12">
+        <div class="card mb-4">
+            <h5 class="card-header"></h5>
+            <form asp-controller="Meetings" asp-action="Update" method="post" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly"></div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label asp-for="Name" id="defaultFormControlInput" class="form-label">Toplantı Başlığı</label>
+                        <input asp-for="Name" type="text" class="form-control mb-3" id="defaultFormControlInput" placeholder="Lütfen başlık giriniz." aria-describedby="defaultFormControlHelp">
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Description" for="defaultFormControlInput" class="form-label">Açıklama</label>
+                        <textarea asp-for="Description" type="text" class="form-control mb-3" id="defaultFormControlInput" style="min-height:300px;" placeholder="İçerik" aria-describedby="defaultFormControlHelp"></textarea>
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="StartingDate" class="form-label">Başlangıç Tarihi ve Saati</label>
+                        <input asp-for="StartingDate" type="datetime-local" class="form-control mb-3" aria-describedby="defaultFormControlHelp" id="startingDate">
+                        <span asp-validation-for="StartingDate" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="EndingDate" class="form-label">Bitiş Tarihi ve Saati</label>
+                        <input asp-for="EndingDate" type="datetime-local" class="form-control mb-3" aria-describedby="defaultFormControlHelp" id="endingDate">
+                        <span asp-validation-for="EndingDate" class="text-danger"></span>
+                    </div>
+                    @* <div class="form-group">
+                        <label asp-for="Document" class="form-label">Belge Yükle</label>
+                        <input asp-for="Document" type="file" class="form-control mb-3" accept=".pdf,.doc,.docx" aria-describedby="defaultFormControlHelp">
+                        <span asp-validation-for="Document" class="text-danger"></span>
+                    </div> *@
+                    <div class="form-group">
+                        <label asp-for="UserIds" class="form-label">Toplantı Katılımcıları</label>
+                        <select asp-for="UserIds" class="form-control mb-3" multiple id="userIdsSelect">
+                            @foreach (var user in Model.Users)
+                            {
+                                <option value="@user.Id">@user.FirstName @user.LastName</option>
+                            }
+                        </select>
+                        <span asp-validation-for="UserIds" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block">Kaydet</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

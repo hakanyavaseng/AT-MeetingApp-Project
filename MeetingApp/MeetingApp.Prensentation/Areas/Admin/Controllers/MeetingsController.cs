@@ -41,6 +41,31 @@ namespace MeetingApp.Prensentation.Areas.Admin.Controllers
         }
 
         [HttpGet]
+        public async Task<IActionResult> Update(string id)
+        {
+            var meeting = await meetingService.GetOneMeeting(id);
+            var users = await userService.GetAllUsers();
+           
+            meeting.Users = users.ToList();
+            return View(meeting);
+
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Update(UpdateMeetingDto updateMeetingDto)
+        {
+            await meetingService.UpdateMeeting(updateMeetingDto);
+            return RedirectToAction(nameof(Index)); 
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Complete([FromRoute] string id)
+        {
+            await meetingService.CompleteMeeting(id);
+            return RedirectToAction(nameof(Index));
+        }
+
+        [HttpGet]
         public async Task<IActionResult> Delete([FromRoute] string id)
         {
             await meetingService.DeleteMeeting(id);
