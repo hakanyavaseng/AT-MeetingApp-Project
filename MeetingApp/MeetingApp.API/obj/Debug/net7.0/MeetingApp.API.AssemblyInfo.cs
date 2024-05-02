@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MeetingApp.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ef2a3ab947c50c02ed3ffac5dad3ed7e65c7bc34")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f4abc11985c87642b6e5dc928e798bd05b41138a")]
 [assembly: System.Reflection.AssemblyProductAttribute("MeetingApp.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MeetingApp.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

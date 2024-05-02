@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using MeetingApp.Entity.DTOs.User;
+using MeetingApp.Entity.Entities.Identity;
+using Microsoft.AspNetCore.Http;
 
 namespace MeetingApp.Entity.DTOs.Meeting
 {
@@ -9,7 +11,9 @@ namespace MeetingApp.Entity.DTOs.Meeting
         public DateTime StartingDate { get; set; }
         public DateTime EndingDate { get; set; }
         public IFormFile Document { get; set; }
-        public ICollection<Guid> UserIds  { get; set; }
+        public List<Guid> UserIds  { get; set; }
+        public List<UserListDto> Users { get; set; } // Assume UserDto is the DTO representing a user
+
     }
 }
 

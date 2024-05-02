@@ -1,0 +1,43 @@
+﻿@model List<MeetingListDto>
+
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-3">
+            <a class="btn btn-primary" asp-area="Admin" asp-controller="Meetings" asp-action="Create">Add Meeting</a>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-md-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Meeting Name</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>Description</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Name</td>
+                            <td>@item.StartingDate.ToShortDateString() @item.StartingDate.ToShortTimeString()</td>
+                            <td>@item.EndingDate.ToShortDateString() @item.EndingDate.ToShortTimeString()</td>
+                            <td>@item.Description</td>
+                            <td>
+                                <div class="btn-group" role="group">
+                                    <a href="#" class="btn btn-success" title="Complete"><i class='bx bx-check'></i></a>
+                                    <a asp-controller="Meetings" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger" title="Delete"><i class='bx bx-trash'></i></a>
+                                    <a href="#" class="btn btn-primary" title="Update"><i class='bx bx-pencil'></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

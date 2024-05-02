@@ -5,6 +5,7 @@ using MeetingApp.Service.Auth;
 using MeetingApp.Service.Mail;
 using MeetingApp.Service.Services.Abstractions;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using System.IdentityModel.Tokens.Jwt;
 
 namespace MeetingApp.Service.Services.Concretes
@@ -41,6 +42,13 @@ namespace MeetingApp.Service.Services.Concretes
             }
             return false;
         }
+
+        public async Task<IList<UserListDto>> GetAllUsers()
+        {
+            var users = await _userManager.Users.ToListAsync();
+            return _mapper.Map<List<UserListDto>>(users);
+        }
+
 
         public async Task<UserLoginResponseDto> LoginAsync(UserLoginDto userLoginDto)
         {

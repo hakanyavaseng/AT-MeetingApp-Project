@@ -27,7 +27,7 @@ namespace MeetingApp.Service.Services.Concretes
 
         public async Task<IList<MeetingListDto>> GetAllMeetings()
         {
-            IList<Meeting> meetings = await _repositoryManager.GetRepository<Meeting>().GetAllAsync().ToListAsync();
+            IList<Meeting> meetings = await _repositoryManager.GetRepository<Meeting>().GetAllAsync().OrderByDescending(p=>p.StartingDate).ToListAsync();
             return _mapper.Map<IList<MeetingListDto>>(meetings);
         }
 
@@ -55,12 +55,12 @@ namespace MeetingApp.Service.Services.Concretes
             await _repositoryManager.GetRepository<Meeting>().AddAsync(meeting);
             if (await _repositoryManager.SaveAsync() > 0)
             {
-                await _mailService.SendEmailAsync(new MailRequest()
-                {
-                    ToEmail = mails.ToArray(),
-                    Subject = $"You have enrolled a meeting!",
-                    Body = $"{meeting.Name},{meeting.Description}, {meeting.StartingDate} - {meeting.EndingDate}"
-                });
+                //await _mailService.SendEmailAsync(new MailRequest()
+                //{
+                //    ToEmail = mails.ToArray(),
+                //    Subject = $"You have enrolled a meeting!",
+                //    Body = $"{meeting.Name},{meeting.Description}, {meeting.StartingDate} - {meeting.EndingDate}"
+                //});
             }
             return true;
 
