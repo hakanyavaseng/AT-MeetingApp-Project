@@ -11,6 +11,7 @@ namespace MeetingApp.Data.Contexts
     {
         public DbSet<Meeting> Meetings { get; set; }
         public DbSet<AppUserMeeting> AppUserMeetings { get; set; }
+        public DbSet<Document> Documents { get; set; }
         public MeetingAppDbContext(DbContextOptions options) : base(options)
         {
         }

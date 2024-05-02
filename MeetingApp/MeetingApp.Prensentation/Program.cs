@@ -1,6 +1,7 @@
 using MeetingApp.Data.Contexts;
 using MeetingApp.Data.Extensions;
 using MeetingApp.Entity.Entities.Identity;
+using MeetingApp.Prensentation.Extensions;
 using MeetingApp.Service.Extensions;
 using Microsoft.AspNetCore.Identity;
 
@@ -12,6 +13,7 @@ builder.Services.AddDataLayerExtensions(builder.Configuration);
 builder.Services.AddServiceLayerExtensions(builder.Configuration);
 
 builder.Services.AddSession();
+
 
 builder.Services
     .AddIdentity<AppUser, AppRole>(options =>
@@ -43,6 +45,8 @@ builder.Services.ConfigureApplicationCookie(config =>
 });
 
 var app = builder.Build();
+
+app.ConfigureDefaultAdminUser();
 
 if (!app.Environment.IsDevelopment())
 {

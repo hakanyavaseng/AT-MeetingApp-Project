@@ -1,4 +1,5 @@
 ﻿using MeetingApp.Service.Auth;
+using MeetingApp.Service.Document;
 using MeetingApp.Service.Mail;
 using MeetingApp.Service.Services.Abstractions;
 using MeetingApp.Service.Services.Concretes;
@@ -16,6 +17,7 @@ namespace MeetingApp.Service.Extensions
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IMeetingService, MeetingService>();
             services.AddScoped<IMailService, MailService>();
+            services.AddScoped<IDocumentService, DocumentService>();
 
             //AutoMapper
             services.AddAutoMapper(Assembly.GetExecutingAssembly());

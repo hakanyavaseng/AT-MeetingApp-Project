@@ -33,9 +33,9 @@ namespace MeetingApp.Data.Repositories.Concretes
         {
             IQueryable<T> query = Table;
             if(predicate is not null)
-                query.Where(predicate);
+                query = query.Where(predicate);
             if (!trackChanges)
-                query.AsNoTracking();
+                query = query.AsNoTracking();
             return await query.FirstOrDefaultAsync();
         }
         public async Task<T?> GetByIdAsync(Guid id, bool trackChanges = false)

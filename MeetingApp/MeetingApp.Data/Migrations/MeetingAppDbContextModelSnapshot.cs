@@ -46,6 +46,37 @@ namespace MeetingApp.Data.Migrations
                     b.ToTable("AppUserMeetings");
                 });
 
+            modelBuilder.Entity("MeetingApp.Entity.Entities.Document", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool?>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<Guid>("MeetingId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Path")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("RegisteredDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MeetingId")
+                        .IsUnique();
+
+                    b.ToTable("Documents");
+                });
+
             modelBuilder.Entity("MeetingApp.Entity.Entities.Identity.AppRole", b =>
                 {
                     b.Property<Guid>("Id")
@@ -301,6 +332,17 @@ namespace MeetingApp.Data.Migrations
                     b.Navigation("Meeting");
                 });
 
+            modelBuilder.Entity("MeetingApp.Entity.Entities.Document", b =>
+                {
+                    b.HasOne("MeetingApp.Entity.Entities.Meeting", "Meeting")
+                        .WithOne("Document")
+                        .HasForeignKey("MeetingApp.Entity.Entities.Document", "MeetingId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Meeting");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
                 {
                     b.HasOne("MeetingApp.Entity.Entities.Identity.AppRole", null)
@@ -360,6 +402,9 @@ namespace MeetingApp.Data.Migrations
             modelBuilder.Entity("MeetingApp.Entity.Entities.Meeting", b =>
                 {
                     b.Navigation("AppUserMeetings");
+
+                    b.Navigation("Document")
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

@@ -5,6 +5,26 @@
     {
       "AbsoluteMoniker": "D:0:0:{C9566CE6-D6C1-45C6-AA77-C4BB505C8F2F}|MeetingApp.Service\\MeetingApp.Service.csproj|c:\\users\\hakan\\onedrive\\belgeler\\github repositories\\at-meeting-project\\meetingapp\\meetingapp.service\\services\\concretes\\meetingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C9566CE6-D6C1-45C6-AA77-C4BB505C8F2F}|MeetingApp.Service\\MeetingApp.Service.csproj|solutionrelative:meetingapp.service\\services\\concretes\\meetingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C9566CE6-D6C1-45C6-AA77-C4BB505C8F2F}|MeetingApp.Service\\MeetingApp.Service.csproj|c:\\users\\hakan\\onedrive\\belgeler\\github repositories\\at-meeting-project\\meetingapp\\meetingapp.service\\document\\documentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C9566CE6-D6C1-45C6-AA77-C4BB505C8F2F}|MeetingApp.Service\\MeetingApp.Service.csproj|solutionrelative:meetingapp.service\\document\\documentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDC634C3-73B6-44A2-BD7D-20793A358DC0}|MeetingApp.Prensentation\\MeetingApp.Prensentation.csproj|c:\\users\\hakan\\onedrive\\belgeler\\github repositories\\at-meeting-project\\meetingapp\\meetingapp.prensentation\\areas\\admin\\controllers\\meetingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDC634C3-73B6-44A2-BD7D-20793A358DC0}|MeetingApp.Prensentation\\MeetingApp.Prensentation.csproj|solutionrelative:meetingapp.prensentation\\areas\\admin\\controllers\\meetingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDC634C3-73B6-44A2-BD7D-20793A358DC0}|MeetingApp.Prensentation\\MeetingApp.Prensentation.csproj|c:\\users\\hakan\\onedrive\\belgeler\\github repositories\\at-meeting-project\\meetingapp\\meetingapp.prensentation\\areas\\admin\\views\\meetings\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DDC634C3-73B6-44A2-BD7D-20793A358DC0}|MeetingApp.Prensentation\\MeetingApp.Prensentation.csproj|solutionrelative:meetingapp.prensentation\\areas\\admin\\views\\meetings\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDC634C3-73B6-44A2-BD7D-20793A358DC0}|MeetingApp.Prensentation\\MeetingApp.Prensentation.csproj|c:\\users\\hakan\\onedrive\\belgeler\\github repositories\\at-meeting-project\\meetingapp\\meetingapp.prensentation\\areas\\admin\\views\\meetings\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DDC634C3-73B6-44A2-BD7D-20793A358DC0}|MeetingApp.Prensentation\\MeetingApp.Prensentation.csproj|solutionrelative:meetingapp.prensentation\\areas\\admin\\views\\meetings\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0EBC2FA4-FB7E-4F8D-9D06-515DC4868C72}|MeetingApp.Data\\MeetingApp.Data.csproj|c:\\users\\hakan\\onedrive\\belgeler\\github repositories\\at-meeting-project\\meetingapp\\meetingapp.data\\repositories\\concretes\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0EBC2FA4-FB7E-4F8D-9D06-515DC4868C72}|MeetingApp.Data\\MeetingApp.Data.csproj|solutionrelative:meetingapp.data\\repositories\\concretes\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +34,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\hakan\\OneDrive\\Belgeler\\Github Repositories\\at-meeting-project\\MeetingApp\\MeetingApp.Prensentation\\Areas\\Admin\\Views\\Meetings\\Details.cshtml",
+              "RelativeDocumentMoniker": "MeetingApp.Prensentation\\Areas\\Admin\\Views\\Meetings\\Details.cshtml",
+              "ToolTip": "C:\\Users\\hakan\\OneDrive\\Belgeler\\Github Repositories\\at-meeting-project\\MeetingApp\\MeetingApp.Prensentation\\Areas\\Admin\\Views\\Meetings\\Details.cshtml",
+              "RelativeToolTip": "MeetingApp.Prensentation\\Areas\\Admin\\Views\\Meetings\\Details.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-02T13:41:55.793Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\hakan\\OneDrive\\Belgeler\\Github Repositories\\at-meeting-project\\MeetingApp\\MeetingApp.Prensentation\\Areas\\Admin\\Views\\Meetings\\Index.cshtml",
+              "RelativeDocumentMoniker": "MeetingApp.Prensentation\\Areas\\Admin\\Views\\Meetings\\Index.cshtml",
+              "ToolTip": "C:\\Users\\hakan\\OneDrive\\Belgeler\\Github Repositories\\at-meeting-project\\MeetingApp\\MeetingApp.Prensentation\\Areas\\Admin\\Views\\Meetings\\Index.cshtml",
+              "RelativeToolTip": "MeetingApp.Prensentation\\Areas\\Admin\\Views\\Meetings\\Index.cshtml",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-02T13:41:53.733Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -24,9 +70,48 @@
               "RelativeDocumentMoniker": "MeetingApp.Service\\Services\\Concretes\\MeetingService.cs",
               "ToolTip": "C:\\Users\\hakan\\OneDrive\\Belgeler\\Github Repositories\\at-meeting-project\\MeetingApp\\MeetingApp.Service\\Services\\Concretes\\MeetingService.cs",
               "RelativeToolTip": "MeetingApp.Service\\Services\\Concretes\\MeetingService.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAB0AAAB3AAAA",
+              "ViewState": "AQIAAFwAAAAAAAAAAIAwwGoAAABEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-02T10:23:27.571Z",
+              "WhenOpened": "2024-05-02T13:37:06.692Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MeetingsController.cs",
+              "DocumentMoniker": "C:\\Users\\hakan\\OneDrive\\Belgeler\\Github Repositories\\at-meeting-project\\MeetingApp\\MeetingApp.Prensentation\\Areas\\Admin\\Controllers\\MeetingsController.cs",
+              "RelativeDocumentMoniker": "MeetingApp.Prensentation\\Areas\\Admin\\Controllers\\MeetingsController.cs",
+              "ToolTip": "C:\\Users\\hakan\\OneDrive\\Belgeler\\Github Repositories\\at-meeting-project\\MeetingApp\\MeetingApp.Prensentation\\Areas\\Admin\\Controllers\\MeetingsController.cs",
+              "RelativeToolTip": "MeetingApp.Prensentation\\Areas\\Admin\\Controllers\\MeetingsController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAGQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-02T13:36:55.228Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Repository.cs",
+              "DocumentMoniker": "C:\\Users\\hakan\\OneDrive\\Belgeler\\Github Repositories\\at-meeting-project\\MeetingApp\\MeetingApp.Data\\Repositories\\Concretes\\Repository.cs",
+              "RelativeDocumentMoniker": "MeetingApp.Data\\Repositories\\Concretes\\Repository.cs",
+              "ToolTip": "C:\\Users\\hakan\\OneDrive\\Belgeler\\Github Repositories\\at-meeting-project\\MeetingApp\\MeetingApp.Data\\Repositories\\Concretes\\Repository.cs",
+              "RelativeToolTip": "MeetingApp.Data\\Repositories\\Concretes\\Repository.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAQwCcAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-02T13:35:07.396Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DocumentService.cs",
+              "DocumentMoniker": "C:\\Users\\hakan\\OneDrive\\Belgeler\\Github Repositories\\at-meeting-project\\MeetingApp\\MeetingApp.Service\\Document\\DocumentService.cs",
+              "RelativeDocumentMoniker": "MeetingApp.Service\\Document\\DocumentService.cs",
+              "ToolTip": "C:\\Users\\hakan\\OneDrive\\Belgeler\\Github Repositories\\at-meeting-project\\MeetingApp\\MeetingApp.Service\\Document\\DocumentService.cs",
+              "RelativeToolTip": "MeetingApp.Service\\Document\\DocumentService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAABBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-02T13:33:25.721Z",
               "EditorCaption": ""
             }
           ]

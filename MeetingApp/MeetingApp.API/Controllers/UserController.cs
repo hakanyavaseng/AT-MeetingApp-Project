@@ -35,9 +35,6 @@ namespace MeetingApp.API.Controllers
         {
             if (userLoginDto is null)
                 return BadRequest();
-            if(!userLoginDto.Password.Equals(userLoginDto.PasswordConfirm))
-                return BadRequest(ModelState);
-
             return Ok(await _userService.LoginAsync(userLoginDto));
         }
 

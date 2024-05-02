@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using MeetingApp.Data.Repositories.Abstractions;
 using MeetingApp.Entity.DTOs.Meeting;
+using MeetingApp.Entity.DTOs.User;
 using MeetingApp.Entity.Entities;
 using MeetingApp.Entity.Entities.Identity;
 using MeetingApp.Service.Mail;
@@ -27,11 +28,15 @@ namespace MeetingApp.Service.Services.Concretes
 
         public async Task<IList<MeetingListDto>> GetAllMeetings()
         {
-            IList<Meeting> meetings = await _repositoryManager.GetRepository<Meeting>().GetAllAsync().OrderByDescending(p=>p.StartingDate).ToListAsync();
+            IList<Meeting> meetings = await _repositoryManager.GetRepository<Meeting>()
+                .GetAllAsync()
+                .Where(p=> p.IsActive ==true)
+                .OrderByDescending(p=>p.StartingDate)
+                .ToListAsync();
             return _mapper.Map<IList<MeetingListDto>>(meetings);
         }
 
-        public async Task<bool> CreateMeeting(AddMeetingDto addMeetingDto)
+        public async Task<string> CreateMeeting(AddMeetingDto addMeetingDto)
         {
             List<string> mails = new();
             Meeting meeting = _mapper.Map<Meeting>(addMeetingDto);
@@ -62,7 +67,7 @@ namespace MeetingApp.Service.Services.Concretes
                 //    Body = $"{meeting.Name},{meeting.Description}, {meeting.StartingDate} - {meeting.EndingDate}"
                 //});
             }
-            return true;
+            return meeting.Id.ToString();
 
         }
 
@@ -85,6 +90,53 @@ namespace MeetingApp.Service.Services.Concretes
 
             await _repositoryManager.SaveAsync();
             return true;
+        }
+
+        public async Task<bool> CompleteMeeting(string id)
+        {
+            Meeting? meeting = await _repositoryManager.GetRepository<Meeting>().GetByIdAsync(Guid.Parse(id),true);
+
+            if(meeting is null)
+                throw new ArgumentNullException(nameof(meeting));
+
+            meeting.IsActive = false;
+            await _repositoryManager.SaveAsync();
+            return true;
+        }
+
+        public async Task<UpdateMeetingDto> GetOneMeeting(string id)
+        {
+            var meeting = await _repositoryManager.GetRepository<Meeting>().GetByIdAsync(Guid.Parse(id),false);
+            var listDto = _mapper.Map<UpdateMeetingDto>(meeting);
+
+            listDto.UserIds = await _repositoryManager
+            .GetRepository<AppUserMeeting>()
+            .GetAllAsync(p => p.MeetingId.Equals(listDto.Id))
+            .Select(p => p.AppUserId)
+            .ToListAsync();
+
+            return listDto;
+        }
+
+        public async Task<MeetingListDto> GetOneMeetingWithDetails(string id)
+        {
+            var meeting = await _repositoryManager.GetRepository<Meeting>().GetByIdAsync(Guid.Parse(id));
+            var listDto = _mapper.Map<MeetingListDto>(meeting); 
+
+            listDto.UserIds = await _repositoryManager
+            .GetRepository<AppUserMeeting>()
+            .GetAllAsync(p => p.MeetingId.Equals(listDto.Id))
+            .Select(p => p.AppUserId)
+            .ToListAsync();
+
+            List<UserListDto> users = new();
+
+            foreach (var userId in listDto.UserIds)
+                users.Add(_mapper.Map<UserListDto>(await _userManager.FindByIdAsync(userId.ToString())));
+            
+            listDto.Users = users;
+
+            return listDto;
         }
     }
 }

@@ -1,0 +1,44 @@
+﻿@model (MeetingListDto? meeting, Document document)
+
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-12">
+            <h2>@Model.meeting?.Name</h2>
+            <p><strong>Açıklama:</strong> @Model.meeting?.Description</p>
+            <p><strong>Başlangıç Tarihi:</strong> @Model.meeting?.StartingDate.ToShortDateString() @Model.meeting?.StartingDate.ToShortTimeString()</p>
+            <p><strong>Bitiş Tarihi:</strong> @Model.meeting?.EndingDate.ToShortDateString() @Model.meeting?.EndingDate.ToShortTimeString()</p>
+            <hr />
+            <h3>Doküman</h3>
+            @if (@Model.document != null)
+            {
+                <p><strong>Tür:</strong> @Model.document.Type</p>
+                <p>
+                    <a asp-controller="Meetings" asp-action="DownloadDocument" name="id" value="@Model.meeting.Id" class="btn btn-primary">Dokümanı İndir</a>
+                </p>
+            }
+            else
+            {
+                <p>Bu toplantı için doküman mevcut değil.</p>
+            }
+            <hr />
+            <h3>Katılımcılar</h3>
+            @if (@Model.meeting?.Users != null && @Model.meeting.Users.Any())
+            {
+                <ul>
+                    @foreach (var user in @Model.meeting.Users)
+                    {
+                        <li>@user.FirstName @user.LastName</li>
+                    }
+                </ul>
+            }
+            else
+            {
+                <p>Bu toplantıya katılımcı yok.</p>
+            }
+            <hr />
+            <div>
+                <a href="@Url.Action("Index", "Meetings")" class="btn btn-primary">Toplantı Listesine Geri Dön</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -9,5 +9,6 @@ namespace MeetingApp.Entity.Entities
         public DateTime StartingDate { get; set; }
         public DateTime EndingDate { get; set; }
         public ICollection<AppUserMeeting> AppUserMeetings { get; set; }
+        public Document Document { get; set; }
     }
 }
